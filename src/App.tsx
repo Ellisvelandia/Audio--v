@@ -8,7 +8,7 @@ import Wave from "./Wave";
 
 function App() {
   const [analyzer, setAnalyzer] = React.useState<AudioAnalyzer | null>(null);
-  const [audioUrl, setAudioUrl] = React.useState<String | null>(null);
+  const [audioUrl, setAudioUrl] = React.useState<string | null>(null);
   const audioElmRef = React.useRef<HTMLAudioElement>(null!);
 
   const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +25,8 @@ function App() {
           width: "100vw",
           height: "calc(100vh - 80px)",
           backgroundColor: "#135bc752",
-          backgroundImage: "linear-gradient(225deg,#135bc752 0%, #036af0 52%, #054a8b52 100%)"
+          backgroundImage:
+            "linear-gradient(225deg,#135bc752 0%, #036af0 52%, #054a8b52 100%)",
         }}
       >
         <ambientLight />
@@ -48,7 +49,7 @@ function App() {
             radius={2}
           />
         )}
-        <Wave color={0x999999} segments={70}/>
+        <Wave color={0x999999} segments={70} />
       </Canvas>
       <div
         style={{

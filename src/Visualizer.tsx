@@ -4,12 +4,12 @@ import { AudioAnalyzer } from "./lib/audio";
 import { extendMeshLine } from "./lib/meshline";
 import { MeshLine } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { normalizeBetween, radians } from "./lib/math";
+import { normalizeBetween, radians, } from "./lib/math";
 
 extendMeshLine();
 
 type Props = {
-  analizer: AudioAnalyzer;
+  analyzer: AudioAnalyzer;
   lineWidth?: number;
   color?: number;
   segments?: number;
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function Visualizer({
-  analizer,
+  analyzer,
   lineWidth = 0.04,
   color = 0xffffff,
   segments = 100,
@@ -28,8 +28,8 @@ export default function Visualizer({
   const lineRef = React.useRef<MeshLine>(null);
 
   useFrame(() => {
-    if (!analizer) return;
-    const fft = analizer.getFft();
+    if (!analyzer) return;
+    const fft = analyzer.getFft();
     const points: number[] = [];
 
     for (let i = 0; i < segments; i++) {
